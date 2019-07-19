@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="font-weight: bold; text-align: center; font-size: 25px">
+      Análisis de Voz
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="card-title">
+        <p style="font-weight: bold; text-align: center; font-size: 25px; color: #119674;" absolute-drag>¡ Bienvenido/a !</p>
+        </div>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <img src="assets/utem.jpg" alt="">
+
+        <button ion-button primary full round(click)="stopRecord()" *ngIf="recording"><ion-icon name="mic-off"></ion-icon>&nbsp;&nbsp;Detener Grabacion</button>
+        <button ion-button primary full round (click)="startRecord()" *ngIf="!recording"><ion-icon name="mic"></ion-icon>&nbsp;&nbsp;Comenzar Grabacion</button>
+        <button ion-button full round  ion-button icon-only (click)= "gotosecondpage()">
+          <ion-icon name="mail"></ion-icon> Analizar </button>
+
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Esta parte del audio reproduce lo grabado
+  <ion-list>
+    <ion-item *ngFor="let audio of audioList; index as i;">
+      <p>{{audio.filename}}</p>
+      <button ion-button clear item-end large (click)="playAudio(audio.filename, i)"><ion-icon name="play"></ion-icon></button>
+    </ion-item>
+  </ion-list>
+  -->
+</ion-content>
